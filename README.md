@@ -1,0 +1,2 @@
+# NumeroEstrictoJavaScript
+Practica JavaScript
