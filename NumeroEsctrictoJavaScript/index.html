@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NumeroEstricto</title>
+    <script type="text/javascript">
+        let numero = parseInt(prompt("Introduce un numero"));
+        let numeroAux = numero;
+        let numeros = [];
+
+        while(numeroAux>0){
+            let resto = numeroAux % 10;
+            if (resto === 1 || resto === 3 || resto===5){
+                numeros.unshift(1);
+            } else {
+                numeros.unshift(0);
+            }
+            numeroAux = parseInt(numeroAux / 10);
+        }
+        console.log(numeros);
+
+        function comprobador(numeros) {
+            let estricto = true;
+            let contador = 0;
+                if (numeros[0]===1){
+                    for (let i=1;i<numeros.length;i++) {
+                        if (numeros[i-1] !== numeros[i]){
+                            contador++;
+                        }
+                    }
+                }
+                if (numeros[0]===0){
+                    for (let i=1;i<numeros.length;i++) {
+                        if (numeros[i-1] !== numeros[i]){
+                            estricto = false;
+                            //console.log(numeros[i])
+                        }
+                    }
+                }
+            if (contador>1 || !estricto){
+                    alert("El numero "+numero+" no es estricto");
+            } else {
+                    alert("El numero "+numero+" es estricto");
+            }
+
+        }
+        comprobador(numeros);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
